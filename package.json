@@ -1,0 +1,31 @@
+{
+  "name": "event-reminders",
+  "version": "1.0.0",
+  "description": "",
+  "main": "wake_up_dyno.js",
+  "scripts": {
+    "dev": "nodemon app.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/miles0007/event-reminders.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/miles0007/event-reminders/issues"
+  },
+  "homepage": "https://github.com/miles0007/event-reminders#readme",
+  "dependencies": {
+    "axios": "^0.21.1",
+    "ejs": "^3.1.6",
+    "express": "^4.17.1",
+    "mysql": "^2.18.1",
+    "node-cron": "^3.0.0",
+    "nodemailer": "^6.6.2"
+  },
+  "devDependencies": {
+    "nodemon": "^2.0.9"
+  }
+}
