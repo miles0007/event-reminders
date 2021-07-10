@@ -7,6 +7,6 @@ cron.schedule("35 7 * * *", function () {
 });
 
 
-cron.schedule("30 17 * * *", function() {
+cron.schedule("* * * * *", function() {
   birthdayEvents();
 })
