@@ -63,6 +63,6 @@ function renderHTML(events) {
     return ejTemplatePromise(templatePath, {events, year})
 }
 
-birthdayEvents()
+// birthdayEvents()
 
 module.exports = { birthdayEvents, renderHTML, promiseQuery }

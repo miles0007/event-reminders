@@ -11,7 +11,9 @@ app.set('view engine', 'ejs');
 app.use(express.json())
 app.use("/", appRoutes)
 
-app.listen(8080, () => console.log("Listening on port: 8080"))
+app.listen(process.env.PORT || 8080, () =>
+  console.log("Listening on port: 8080")
+);
 
 
 module.exports = express;
