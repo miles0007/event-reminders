@@ -7,6 +7,6 @@ const { birthdayEvents } = require('../APIs/utils');
 // });
 
 
-cron.schedule("00 02 * * *", function () {
+cron.schedule("02 02 * * *", function () {
   birthdayEvents();
 });
