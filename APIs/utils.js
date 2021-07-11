@@ -13,7 +13,7 @@ async function birthdayEvents() {
         if (bdays !== null && bdays[0].length > 0) {
           const HTML = await renderHTML(bdays[0])
           await sendEmail({
-            from: "milesstonner@gmail.com",
+            from: "cyborgv.2@hotmail.com",
             to: "kavinkarthik025@gmail.com",
             subject: "BirthDay Events",
             text: "I was an automated email scheduled at every day at 12 Noon",
