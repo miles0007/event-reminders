@@ -1,12 +1,18 @@
 
 const cron = require("node-cron");
 const { birthdayEvents } = require('../APIs/utils');
-
-// cron.schedule("35 7 * * *", function () {
-//   birthdayEvents();
-// });
+const { create_log } = require('../APIs/addon');
 
 
-cron.schedule("02 05 * * *", function () {
+
+// At morning 7:32 am IST (UTC Time 02:02 am)
+cron.schedule("02 02 * * *", function () {
+  birthdayEvents();
+  create_log('App cron started');
+});
+
+// At evening 7:32 pm IST (UTC Time 01:30 pm)
+cron.schedule("32 01 * * *", function () {
+  create_log("App cron started");
   birthdayEvents();
 });

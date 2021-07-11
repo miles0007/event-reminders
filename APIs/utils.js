@@ -3,6 +3,7 @@ const con = require("../database/mysql");
 const ejs = require('ejs');
 const path = require('path');
 const util = require('util');
+const { create_log, promiseQuery }= require('./addon');
 const sendEmail = require("./mail");
 
 
@@ -11,6 +12,7 @@ async function birthdayEvents() {
     try {
         bdays = await getBirthdays();
         if (bdays !== null && bdays[0].length > 0) {
+          create_log("Returned Birthday Events: "+JSON.stringify(bdays[0]))
           const HTML = await renderHTML(bdays[0])
           await sendEmail({
             from: "cyborgv.2@hotmail.com",
@@ -25,6 +27,7 @@ async function birthdayEvents() {
           console.log("Some thing went wrong");
         }
     } catch(e) {
+        create_log('ERROR on birthdayEvents: '+JSON.stringify(e));
         console.log('err occured',e)
     }
 }
@@ -43,18 +46,6 @@ function getBirthdays() {
 
 }
 
-function promiseQuery(query) {
-  return new Promise((resolve, reject) => {
-    con.query(query, (err, data) => {
-      if (err) {
-        reject(err)
-      }
-      resolve(data)
-      return;
-    })
-  })
-} 
-
 function renderHTML(events) {
     const ejTemplatePromise = util.promisify(ejs.renderFile)
     const templatePath = path.join(__dirname, '../', "templates/email.ejs");
@@ -65,4 +56,4 @@ function renderHTML(events) {
 
 // birthdayEvents()
 
-module.exports = { birthdayEvents, renderHTML, promiseQuery }
+module.exports = { birthdayEvents, renderHTML }

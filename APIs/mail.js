@@ -1,5 +1,6 @@
 
 const nodemailer = require("nodemailer");
+const { create_log } = require("./addon");
 
 let mailTransporter = nodemailer.createTransport({
   host: "smtp-mail.outlook.com", // hostname
@@ -20,9 +21,11 @@ let mailTransporter = nodemailer.createTransport({
 const sendEmail = (mailDetails) => {
   mailTransporter.sendMail(mailDetails, (err, data) => {
     if (err) {
-      console.log("Error Occurs", err);
+      console.log("Error Occurs on Sending Email", err);
+      create_log("Error Occurs on Sending Email: "+JSON.stringify(err));
     } else {
       console.log("Email Sent Successfully.", data.response);
+      create_log("Email Notified Successfully");
     }
   });
 };

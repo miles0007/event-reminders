@@ -2,7 +2,8 @@
 
 const con = require('../database/mysql');
 const ejs = require('ejs');
-const { birthdayEvents, renderHTML, promiseQuery } = require('./utils');
+const { birthdayEvents, renderHTML } = require('./utils');
+const { promiseQuery } = require('./addon');
 const pool = require('../database/mysql');
 
 const allEvents = (req, res) => {
