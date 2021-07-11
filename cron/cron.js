@@ -11,8 +11,8 @@ cron.schedule("02 02 * * *", function () {
   create_log('App cron started');
 });
 
-// At evening 7:42 pm IST (UTC Time 01:30 pm)
-cron.schedule("42 01 * * *", function () {
+// At evening 7:25 pm IST (UTC Time 01:30 pm)
+cron.schedule("55 13 * * *", function () {
   create_log("App cron started");
   birthdayEvents();
 });
