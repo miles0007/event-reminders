@@ -5,8 +5,8 @@ const { create_log } = require('../APIs/addon');
 
 
 
-// At morning 7:32 am IST (UTC Time 02:02 am)
-cron.schedule("02 02 * * *", function () {
+// At morning 8:32 am IST (UTC Time 03:02 am)
+cron.schedule("02 03 * * *", function () {
   birthdayEvents();
   create_log('App cron started');
 });
