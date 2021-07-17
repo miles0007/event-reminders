@@ -5,14 +5,14 @@ const { create_log } = require('../APIs/addon');
 
 
 
-// At morning 8:32 am IST (UTC Time 03:02 am)
-cron.schedule("02 12 * * *", function () {
+// At evening 19:02 IST (UTC Time 1:32 pm)
+cron.schedule("02 13 * * *", function () {
   birthdayEvents();
   create_log('App cron started');
 });
 
-// At evening 7:25 pm IST (UTC Time 01:30 pm)
-cron.schedule("55 13 * * *", function () {
+// At morning 7:02 IST (UTC Time 1:32 am)
+cron.schedule("32 01 * * *", function () {
   create_log("App cron started");
   birthdayEvents();
 });
